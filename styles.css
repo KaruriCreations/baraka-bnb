@@ -275,6 +275,54 @@ body {
     color: var(--text-muted);
 }
 
+/* Card Footer: Price + Airbnb Link */
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    gap: 1rem;
+    position: relative;
+    z-index: 11;
+}
+
+.price-tag {
+    background: #ffffff;
+    color: #1d1d1f;
+    font-weight: 700;
+    font-size: 1.15rem;
+    padding: 8px 18px;
+    border-radius: 980px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    white-space: nowrap;
+}
+
+.price-tag span {
+    font-weight: 400;
+    color: #6e6e73;
+    font-size: 0.85rem;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 10px 22px;
+    border: 1.5px solid var(--primary);
+    color: var(--primary);
+    border-radius: 980px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(41, 151, 255, 0.4);
+}
+
 /* Property Gallery Hover */
 .property-gallery {
     position: absolute;
