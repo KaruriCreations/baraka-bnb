@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 if (response.ok) {
                     messageDiv.textContent = 'Booking request received! We will contact you shortly.';
-                    messageDiv.className = 'form-message success';
+                    messageDiv.className = 'mt-4 text-center text-sm font-bold p-3 rounded-lg bg-green-100 text-green-800 border border-green-200';
                     form.reset();
                 } else {
                     response.json().then(data => {
@@ -47,25 +47,25 @@ document.addEventListener('DOMContentLoaded', () => {
                         } else {
                             messageDiv.textContent = 'Oops! There was a problem submitting your form.';
                         }
-                        messageDiv.className = 'form-message error';
+                        messageDiv.className = 'mt-4 text-center text-sm font-bold p-3 rounded-lg bg-red-100 text-red-800 border border-red-200';
                     }).catch(() => {
                         messageDiv.textContent = 'Oops! There was a problem submitting your form.';
-                        messageDiv.className = 'form-message error';
+                        messageDiv.className = 'mt-4 text-center text-sm font-bold p-3 rounded-lg bg-red-100 text-red-800 border border-red-200';
                     });
                 }
 
                 setTimeout(() => {
-                    messageDiv.className = 'form-message hidden';
+                    messageDiv.className = 'hidden';
                 }, 5000);
             }).catch(error => {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
                 submitBtn.style.opacity = '1';
                 messageDiv.textContent = 'Oops! There was a problem submitting your form.';
-                messageDiv.className = 'form-message error';
+                messageDiv.className = 'mt-4 text-center text-sm font-bold p-3 rounded-lg bg-red-100 text-red-800 border border-red-200';
                 
                 setTimeout(() => {
-                    messageDiv.className = 'form-message hidden';
+                    messageDiv.className = 'hidden';
                 }, 5000);
             });
         });
@@ -88,69 +88,56 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Property Gallery Auto-Scroll Image Cycling
-    const galleries = document.querySelectorAll('.property-gallery');
+    const galleries = document.querySelectorAll('.image-carousel');
     
     galleries.forEach((gallery, index) => {
-        const images = gallery.querySelectorAll('.property-gallery-img');
-        if (images.length === 0) return;
+        const images = gallery.querySelectorAll('.carousel-img');
+        if (images.length <= 1) return;
         
-        // Stagger the start times slightly so they don't all flip at the exact same millisecond
         setTimeout(() => {
-            let stateIndex = 0; // 0 = showing description, 1..N = showing images
-            const totalStates = images.length + 1;
-            
+            let activeIdx = 0;
             setInterval(() => {
-                stateIndex = (stateIndex + 1) % totalStates;
-                
-                if (stateIndex === 0) {
-                    // Show description (hide gallery)
-                    gallery.classList.remove('showing');
-                } else {
-                    // Show gallery and specific image
-                    gallery.classList.add('showing');
-                    const imageIndex = stateIndex - 1;
-                    
-                    images.forEach((img, idx) => {
-                        if (idx === imageIndex) {
-                            img.classList.add('active');
-                        } else {
-                            img.classList.remove('active');
-                        }
-                    });
-                }
-            }, 2500); // Change state every 2.5 seconds
-        }, index * 500); 
+                images[activeIdx].classList.remove('opacity-100');
+                images[activeIdx].classList.add('opacity-0');
+                activeIdx = (activeIdx + 1) % images.length;
+                images[activeIdx].classList.remove('opacity-0');
+                images[activeIdx].classList.add('opacity-100');
+            }, 3000);
+        }, index * 500);
     });
 
-    // Reviews Carousel Logic
-    const reviewCards = document.querySelectorAll('.review-card');
-    const prevReviewBtn = document.getElementById('prev-review');
-    const nextReviewBtn = document.getElementById('next-review');
-    let currentReviewIndex = 0;
+    // Reviews Horizontal Scroll Logic
+    const reviewsSlider = document.getElementById('reviews-slider');
+    const scrollPrevBtn = document.getElementById('scroll-prev-btn');
+    const scrollNextBtn = document.getElementById('scroll-next-btn');
 
-    if (reviewCards.length > 0 && prevReviewBtn && nextReviewBtn) {
-        
-        function showReview(index) {
-            reviewCards.forEach((card, idx) => {
-                if (idx === index) {
-                    // Quick hack to restart animation: remove and re-add class
-                    card.classList.remove('active');
-                    void card.offsetWidth; // trigger reflow
-                    card.classList.add('active');
-                } else {
-                    card.classList.remove('active');
-                }
-            });
+    if (reviewsSlider && scrollPrevBtn && scrollNextBtn) {
+        scrollNextBtn.addEventListener('click', () => {
+            // Roughly width of one card + gap
+            reviewsSlider.scrollBy({ left: 324, behavior: 'smooth' });
+        });
+        scrollPrevBtn.addEventListener('click', () => {
+            reviewsSlider.scrollBy({ left: -324, behavior: 'smooth' });
+        });
+    }
+
+    // Dark Mode Toggle Logic
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    if (themeToggleBtn) {
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
         }
 
-        nextReviewBtn.addEventListener('click', () => {
-            currentReviewIndex = (currentReviewIndex + 1) % reviewCards.length;
-            showReview(currentReviewIndex);
-        });
-
-        prevReviewBtn.addEventListener('click', () => {
-            currentReviewIndex = (currentReviewIndex - 1 + reviewCards.length) % reviewCards.length;
-            showReview(currentReviewIndex);
+        themeToggleBtn.addEventListener('click', function() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
         });
     }
 

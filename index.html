@@ -2,310 +2,981 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta name="description"
-        content="Experience the perfect blend of modern luxury and exceptional comfort at Baraka BNB. Book your premium stay at our Haven, Urban, or Coastal properties today.">
-    <title>Baraka BNB - Premium Stays</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        content="Experience the perfect blend of modern luxury and exceptional comfort at Baraka BNB. Book your premium stay at our Haven or Urban properties today.">
+    <title>Baraka AirBnB | Premium Stays in Sagana</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline": "#71787d",
+                        "on-primary-fixed-variant": "#004a54",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-surface-variant": "#41484d",
+                        "tertiary": "#006492",
+                        "primary-container": "#004f58",
+                        "inverse-surface": "#2e3133",
+                        "primary-fixed": "#97f0ff",
+                        "secondary-fixed-dim": "#b4cad1",
+                        "on-error-container": "#410002",
+                        "error": "#ba1a1a",
+                        "secondary": "#4e6167",
+                        "on-background": "#191c1e",
+                        "surface-dim": "#d9dbdd",
+                        "surface-bright": "#f8f9fb",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#cbe6ff",
+                        "on-surface": "#191c1e",
+                        "inverse-primary": "#4fd8eb",
+                        "on-secondary-fixed": "#0a1e23",
+                        "primary-fixed-dim": "#4fd8eb",
+                        "primary": "#006976",
+                        "on-tertiary-container": "#001e30",
+                        "background": "#f8f9fb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#001f24",
+                        "tertiary-fixed-dim": "#8ecdff",
+                        "surface-variant": "#dee3e5",
+                        "on-secondary-container": "#0a1e23",
+                        "surface-container-low": "#f1f3f5",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e8eaec",
+                        "surface": "#f8f9fb",
+                        "on-tertiary-fixed-variant": "#004c71",
+                        "outline-variant": "#c1c7ce",
+                        "inverse-on-surface": "#f0f1f3",
+                        "secondary-container": "#d0e6ee",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#006976",
+                        "on-secondary-fixed-variant": "#37494f",
+                        "tertiary-fixed": "#cbe6ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#d0e6ee",
+                        "on-tertiary-fixed": "#001e30",
+                        "surface-container": "#edf0f2",
+                        "on-primary-container": "#97f0ff",
+                        "on-primary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        /* Dark Mode Implementations */
+        .dark body { background-color: #0f172a; color: #f1f5f9; }
+        .dark .text-on-surface, .dark .font-headline { color: #f1f5f9 !important; }
+        .dark .text-secondary { color: #94a3b8 !important; }
+        .dark .bg-surface-container-low, .dark .bg-surface-container-high, .dark .bg-primary\/5, .dark .bg-white\/50, .dark .bg-surface-container { background-color: rgba(30, 41, 59, 1) !important; }
+        .dark .border-surface-variant { border-color: rgba(255, 255, 255, 0.1) !important; }
+        .dark .bg-white, .dark .bg-white\/70, .dark .bg-white\/90, .dark .bg-white\/95 { background-color: rgba(30, 41, 59, 0.9) !important; }
+        .dark .glass-card { background: rgba(30, 41, 59, 0.75); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .dark .glass-nav { background: rgba(15, 23, 42, 0.9); }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #006976 0%, #004f58 100%);
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .list-view-container {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        html { scroll-behavior: smooth; }
+    </style>
 </head>
 
-<body>
-    <nav class="glass-nav">
-        <div class="nav-container">
-            <h1 class="logo">Baraka AirBnB</h1>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#amenities">Amenities</a></li>
-                <li><a href="#book">Book</a></li>
-            </ul>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-surface-variant">
+        <div class="flex justify-between items-center px-12 py-4 w-full max-w-screen-2xl mx-auto">
+            <div class="text-xl font-bold tracking-tight text-primary font-headline flex items-center gap-2">
+                <span class="material-symbols-outlined text-2xl">home_work</span>
+                BARAKA AirBnB
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-primary font-semibold border-b-2 border-primary pb-1 text-sm uppercase tracking-wider"
+                    href="#home">Home</a>
+                <a class="text-secondary font-medium hover:text-primary transition-colors duration-300 text-sm uppercase tracking-wider"
+                    href="#properties">Properties</a>
+                <a class="text-secondary font-medium hover:text-primary transition-colors duration-300 text-sm uppercase tracking-wider"
+                    href="#amenities">Amenities</a>
+                <a class="text-secondary font-medium hover:text-primary transition-colors duration-300 text-sm uppercase tracking-wider"
+                    href="#activities">Activities</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle"
+                    class="text-secondary hover:text-primary transition-colors focus:outline-none flex items-center justify-center p-2 rounded-full">
+                    <span class="material-symbols-outlined dark:hidden block text-[20px]">dark_mode</span>
+                    <span class="material-symbols-outlined hidden dark:block text-[20px]">light_mode</span>
+                </button>
+                <a href="#reviews"
+                    class="hidden md:block text-secondary font-medium hover:text-primary transition-colors text-sm">Reviews</a>
+                <a href="#book"
+                    class="primary-gradient text-on-primary px-5 py-2 rounded-lg font-bold text-sm tracking-wide transition-all shadow-md active:scale-95 inline-block text-center">
+                    BOOK NOW
+                </a>
+            </div>
         </div>
     </nav>
 
-    <header class="hero" id="home">
-        <div class="hero-bg"></div>
-        <div class="hero-content glass-card">
-            <h2>Welcome to Baraka AirBnb Sagana</h2>
-            <p>Experience the perfect blend of modern luxury and exceptional comfort in our duo of premium stays.</p>
-            <div class="rating">
-                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
-                    class="star">★</span><span class="star">★</span>
-                <span>5.0 (120+ reviews)</span>
+    <main>
+        <!-- HERO SECTION -->
+        <section id="home" class="relative h-[870px] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img alt="Baraka Haven Hero" class="w-full h-full object-cover" src="assets/media__1773863499864.jpg"
+                    onerror="this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2000&auto=format&fit=crop';" />
+                <div class="absolute inset-0 bg-primary/30"></div>
             </div>
-            <a href="#book" class="btn-primary">Reserve Your Stay</a>
-        </div>
-    </header>
+            <div class="relative z-10 text-center px-6 max-w-4xl glass-card p-12 rounded-2xl">
+                <div class="flex items-center justify-center gap-1 text-yellow-500 mb-4">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="text-secondary text-sm ml-2 font-medium">5.0 (120+ reviews)</span>
+                </div>
+                <h1
+                    class="font-headline text-4xl md:text-6xl font-extrabold text-on-surface tracking-tight mb-6 leading-tight">
+                    Welcome to <span class="text-primary tracking-tight">Baraka AirBnB</span> Sagana.
+                </h1>
+                <p class="font-body text-lg text-secondary mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Experience the perfect blend of modern luxury and exceptional comfort in our duo of premium stays.
+                    Designed for your ultimate retreat.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#book"
+                        class="primary-gradient text-on-primary px-8 py-3.5 rounded-lg font-bold text-sm tracking-wider w-full sm:w-auto transition-all hover:brightness-110 active:scale-95 shadow-lg text-center">
+                        RESERVE YOUR STAY
+                    </a>
+                    <a href="#properties"
+                        class="bg-surface-container-low border border-outline/30 text-on-surface px-8 py-3.5 rounded-lg font-bold text-sm tracking-wider w-full sm:w-auto hover:bg-surface-container-high transition-colors text-center">
+                        VIEW PROPERTIES
+                    </a>
+                </div>
+            </div>
+        </section>
 
-    <section id="about" class="section">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>Our Properties</h2>
-                <p>Discover our distinct locations designed for your ultimate comfort. We proudly host 2 different BNBs
-                    under the Baraka brand.</p>
+        <!-- PROPERTIES SECTION -->
+        <section id="properties" class="py-24 px-12 max-w-screen-xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-primary font-bold tracking-[0.2em] uppercase text-xs block mb-4">Our Locations</span>
+                <h2 class="font-headline text-3xl md:text-4xl font-bold mb-4 text-on-surface">Discover Our Distinct
+                    Properties</h2>
+                <p class="text-secondary max-w-2xl mx-auto">We proudly host 2 different BNBs under the Baraka brand,
+                    expertly curated for comfort whether you seek suburban peace or vibrant city life.</p>
             </div>
-            <div class="bnb-grid">
-                <div class="bnb-card glass-card">
-                    <div class="bnb-icon">🏡</div>
-                    <h3>Baraka Haven</h3>
-                    <p>A serene escape perfect for families and quiet retreats, featuring lush gardens and spacious
-                        living areas.</p>
-                    <div class="property-gallery glass-card">
-                        <img class="property-gallery-img active" src="assets/media__1773863499864.jpg"
-                            alt="Baraka Haven Image 1">
-                        <img class="property-gallery-img" src="assets/media__1773863499796.jpg"
-                            alt="Baraka Haven Image 2">
-                        <img class="property-gallery-img" src="assets/media__1773863499864.jpg"
-                            alt="Baraka Haven Image 3">
-                        <img class="property-gallery-img" src="assets/media__1773863499878.jpg"
-                            alt="Baraka Haven Image 4">
-                        <img class="property-gallery-img" src="assets/media__1773863499918.jpg"
-                            alt="Baraka Haven Image 5">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Baraka Haven -->
+                <div
+                    class="glass-card rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-surface-variant flex flex-col">
+                    <div class="relative h-64 overflow-hidden image-carousel">
+                        <img src="assets/media__1773863499864.jpg" alt="Baraka Haven Front"
+                            class="carousel-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100" />
+                        <img src="assets/media__1773863499796.jpg" alt="Baraka Haven Living"
+                            class="carousel-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                        <img src="assets/media__1773863499878.jpg" alt="Baraka Haven Bedroom"
+                            class="carousel-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                        <img src="assets/media__1773863499918.jpg" alt="Baraka Haven Details"
+                            class="carousel-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                        <div class="absolute inset-0 bg-black/10 z-0 pointer-events-none"></div>
+                        <div
+                            class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-1 shadow-sm z-10">
+                            <span class="material-symbols-outlined text-primary text-sm">cottage</span>
+                            <span class="text-xs font-bold uppercase tracking-wider text-primary">Suburban</span>
+                        </div>
+                        <div
+                            class="absolute bottom-4 right-4 bg-primary text-on-primary px-4 py-2 rounded-lg font-bold shadow-lg">
+                            KSh 2,999 <span class="text-xs font-normal opacity-80">/ night</span>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <div class="price-tag">KSh 2,999 <span>/ night</span></div>
-                        <a href="https://www.airbnb.co.uk/rooms/1316709310709612589?unique_share_id=dd6ac3d7-d0f6-4306-9f00-90d4a9245324&viralityEntryPoint=1&s=76" target="_blank" class="btn-outline">View on Airbnb</a>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <h3 class="font-headline text-2xl font-bold mb-3 text-on-surface">Baraka Haven</h3>
+                        <p class="text-secondary mb-6 flex-grow">A serene escape perfect for families and quiet
+                            retreats, featuring lush gardens and spacious living areas equipped with everything you
+                            need.</p>
+                        <a href="https://www.airbnb.co.uk/rooms/1316709310709612589?unique_share_id=dd6ac3d7-d0f6-4306-9f00-90d4a9245324&viralityEntryPoint=1&s=76"
+                            target="_blank"
+                            class="w-full border-2 border-primary text-primary px-5 py-3 rounded-lg font-bold text-sm tracking-wide transition-all hover:bg-primary hover:text-on-primary text-center">
+                            VIEW ON AIRBNB
+                        </a>
                     </div>
                 </div>
-                <div class="bnb-card glass-card">
-                    <div class="bnb-icon">🌆</div>
-                    <h3>Baraka Urban</h3>
-                    <p>Located in the heart of the city. Enjoy breathtaking skyline views and immediate access to top
-                        attractions.</p>
-                    <div class="property-gallery glass-card">
-                        <img class="property-gallery-img active" src="assets/urban-1.jpg" alt="Baraka Urban Image 1">
-                        <img class="property-gallery-img" src="assets/urban-2.jpg" alt="Baraka Urban Image 2">
-                        <img class="property-gallery-img" src="assets/urban-3.jpg" alt="Baraka Urban Image 3">
-                        <img class="property-gallery-img" src="assets/urban-4.jpg" alt="Baraka Urban Image 4">
-                        <img class="property-gallery-img" src="assets/h23.jpeg" alt="Baraka Urban Image 5">
+
+                <!-- Baraka Urban -->
+                <div
+                    class="glass-card rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-surface-variant flex flex-col">
+                    <div class="relative h-64 overflow-hidden image-carousel">
+                        <img src="assets/urban-1.jpg" alt="Baraka Urban 1"
+                            class="carousel-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100" />
+                        <img src="assets/urban-2.jpg" alt="Baraka Urban 2"
+                            class="carousel-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                        <img src="assets/urban-3.jpg" alt="Baraka Urban 3"
+                            class="carousel-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                        <img src="assets/urban-4.jpg" alt="Baraka Urban 4"
+                            class="carousel-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                        <img src="assets/h23.jpeg" alt="Baraka Urban 5"
+                            class="carousel-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                        <div class="absolute inset-0 bg-black/10 z-0 pointer-events-none"></div>
+                        <div
+                            class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-1 shadow-sm z-10">
+                            <span class="material-symbols-outlined text-primary text-sm">apartment</span>
+                            <span class="text-xs font-bold uppercase tracking-wider text-primary">City Center</span>
+                        </div>
+                        <div
+                            class="absolute bottom-4 right-4 bg-primary text-on-primary px-4 py-2 rounded-lg font-bold shadow-lg">
+                            KSh 2,999 <span class="text-xs font-normal opacity-80">/ night</span>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <div class="price-tag">KSh 2,999 <span>/ night</span></div>
-                        <a href="https://www.airbnb.co.uk/rooms/1439322449678289677?unique_share_id=3d9c3943-d206-44f1-b286-0c96bcf8c924&viralityEntryPoint=1&s=76" target="_blank" class="btn-outline">View on Airbnb</a>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <h3 class="font-headline text-2xl font-bold mb-3 text-on-surface">Baraka Urban</h3>
+                        <p class="text-secondary mb-6 flex-grow">Located in the heart of the city. Enjoy breathtaking
+                            skyline views and immediate access to top attractions, making it ideal for urban explorers.
+                        </p>
+                        <a href="https://www.airbnb.co.uk/rooms/1439322449678289677?unique_share_id=3d9c3943-d206-44f1-b286-0c96bcf8c924&viralityEntryPoint=1&s=76"
+                            target="_blank"
+                            class="w-full border-2 border-primary text-primary px-5 py-3 rounded-lg font-bold text-sm tracking-wide transition-all hover:bg-primary hover:text-on-primary text-center">
+                            VIEW ON AIRBNB
+                        </a>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AMENITIES SECTION -->
+        <section id="amenities" class="py-24 px-12 max-w-screen-xl mx-auto bg-surface-container-low rounded-3xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div>
+                    <span class="text-primary font-bold tracking-[0.2em] uppercase text-xs block mb-4">Curated
+                        Comfort</span>
+                    <h2 class="font-headline text-3xl md:text-4xl font-bold mb-6 text-on-surface">Premium Amenities</h2>
+                    <p class="text-secondary text-base leading-relaxed mb-10">
+                        Everything you need for a comfortable stay across all our properties. We believe luxury lies in
+                        peace of mind, fast connectivity, and reliable conveniences.
+                    </p>
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="flex gap-5 p-4 glass-card rounded-lg hover:shadow-md transition-shadow">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-primary text-on-primary flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-2xl">shield_locked</span>
+                            </div>
+                            <div>
+                                <h3 class="font-headline text-base font-bold text-on-surface mb-1">Top Security</h3>
+                                <p class="text-secondary text-sm">24/7 security cameras and smart locks are strictly
+                                    maintained for your absolute peace of mind.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5 p-4 glass-card rounded-lg hover:shadow-md transition-shadow">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-primary text-on-primary flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-2xl">wifi</span>
+                            </div>
+                            <div>
+                                <h3 class="font-headline text-base font-bold text-on-surface mb-1">High-Speed Wi-Fi</h3>
+                                <p class="text-secondary text-sm">Gigabit internet for uninterrupted streaming, gaming,
+                                    and remote work.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5 p-4 glass-card rounded-lg hover:shadow-md transition-shadow">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-primary text-on-primary flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-2xl">lightbulb</span>
+                            </div>
+                            <div>
+                                <h3 class="font-headline text-base font-bold text-on-surface mb-1">Excellent Lighting
+                                </h3>
+                                <p class="text-secondary text-sm">Floor-to-ceiling windows and premium ambient lighting
+                                    in all rooms.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5 p-4 glass-card rounded-lg hover:shadow-md transition-shadow">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-primary text-on-primary flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-2xl">local_parking</span>
+                            </div>
+                            <div>
+                                <h3 class="font-headline text-base font-bold text-on-surface mb-1">Free Parking</h3>
+                                <p class="text-secondary text-sm">Secure, designated parking spots for your vehicles at
+                                    all locations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative grid grid-cols-6 gap-4">
+                    <div class="col-span-6 rounded-xl overflow-hidden shadow-lg border border-surface-variant">
+                        <img alt="Interior Space" class="w-full h-96 object-cover" src="assets/urban-4.jpg"
+                            onerror="this.src='https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=800&auto=format&fit=crop';" />
+                    </div>
+                    <div class="col-span-3 -mt-16 ml-8 rounded-xl overflow-hidden shadow-xl border-4 border-background">
+                        <img alt="Comfort Detail" class="w-full h-48 object-cover" src="assets/media__1773863499796.jpg"
+                            onerror="this.src='https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=800&auto=format&fit=crop';" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACTIVITIES SECTION (Tripadvisor Request) -->
+        <section id="activities" class="py-24 px-12 max-w-screen-xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
+                <div>
+                    <span class="text-primary font-bold tracking-[0.2em] uppercase text-xs block mb-2">Location
+                        Logistics</span>
+                    <h2 class="font-headline text-3xl font-bold text-on-surface">Activities in Sagana</h2>
+                    <p class="text-secondary">Rated top local attractions to enrich your stay.</p>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <a href="https://www.tripadvisor.com/Attractions-g2559594-Activities-Sagana_Central_Province.html"
+                        target="_blank"
+                        class="bg-primary text-on-primary px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-1 shadow-md hover:brightness-110 transition-all">
+                        <span class="material-symbols-outlined text-sm">travel_explore</span> Tripadvisor Guide
+                    </a>
+                </div>
+            </div>
+            <div
+                class="list-view-container pr-4 border border-surface-variant rounded-xl bg-white shadow-sm overflow-hidden glass-card">
+                <div class="divide-y divide-surface-variant">
+
+                    <!-- Activity 1 -->
+                    <div class="flex items-start gap-6 p-6 hover:bg-surface-container-low transition-colors group">
+                        <div class="w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden border border-surface-variant">
+                            <img alt="White Water Rafting" class="w-full h-full object-cover"
+                                src="assets/savage wilderness.png" />
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-headline text-lg font-bold text-on-surface">Savage Wilderness Rafting
+                                </h3>
+                                <span
+                                    class="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded uppercase tracking-tighter">15
+                                    Min Drive</span>
+                            </div>
+                            <ul class="space-y-1 text-sm text-secondary">
+                                <li class="flex items-center gap-2"><span
+                                        class="w-1 h-1 rounded-full bg-primary"></span>Exhilarating white water rafting
+                                </li>
+                                <li class="flex items-center gap-2"><span
+                                        class="w-1 h-1 rounded-full bg-primary"></span>Zip-lining over the Tana River
+                                </li>
+                                <li class="flex items-center gap-2"><span
+                                        class="w-1 h-1 rounded-full bg-primary"></span>Kayaking & archery options</li>
+                            </ul>
+                        </div>
+                        <button
+                            class="p-2 rounded-lg text-primary hover:bg-primary hover:text-on-primary border border-primary/20 transition-all self-center">
+                            <span class="material-symbols-outlined">sailing</span>
+                        </button>
+                    </div>
+
+                    <!-- Activity 2 -->
+                    <div class="flex items-start gap-6 p-6 hover:bg-surface-container-low transition-colors group">
+                        <div class="w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden border border-surface-variant">
+                            <img alt="Rapids Camp" class="w-full h-full object-cover"
+                                src="assets/rapid camps sagana.png" />
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-headline text-lg font-bold text-on-surface">Rapids Camp Sagana</h3>
+                                <span
+                                    class="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded uppercase tracking-tighter">12
+                                    Min Drive</span>
+                            </div>
+                            <ul class="space-y-1 text-sm text-secondary">
+                                <li class="flex items-center gap-2"><span
+                                        class="w-1 h-1 rounded-full bg-primary"></span>Scenic river waterfalls</li>
+                                <li class="flex items-center gap-2"><span
+                                        class="w-1 h-1 rounded-full bg-primary"></span>Picnic grounds and camping</li>
+                                <li class="flex items-center gap-2"><span
+                                        class="w-1 h-1 rounded-full bg-primary"></span>Team-building challenges</li>
+                            </ul>
+                        </div>
+                        <button
+                            class="p-2 rounded-lg text-primary hover:bg-primary hover:text-on-primary border border-primary/20 transition-all self-center">
+                            <span class="material-symbols-outlined">waterfall_chart</span>
+                        </button>
+                    </div>
+
+                    <!-- Activity 3 -->
+                    <div class="flex items-start gap-6 p-6 hover:bg-surface-container-low transition-colors group">
+                        <div class="w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden border border-surface-variant">
+                            <img alt="Jangwani Camp" class="w-full h-full object-cover"
+                                src="assets/jangwani camp sagana.png" />
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-headline text-lg font-bold text-on-surface">Jangwani Camp Experience
+                                </h3>
+                                <span
+                                    class="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded uppercase tracking-tighter">20
+                                    Min Drive</span>
+                            </div>
+                            <ul class="space-y-1 text-sm text-secondary">
+                                <li class="flex items-center gap-2"><span
+                                        class="w-1 h-1 rounded-full bg-primary"></span>Iconic serene camping spots</li>
+                                <li class="flex items-center gap-2"><span
+                                        class="w-1 h-1 rounded-full bg-primary"></span>Nature walks and trekking</li>
+                                <li class="flex items-center gap-2"><span
+                                        class="w-1 h-1 rounded-full bg-primary"></span>Riverside views and relaxation
+                                </li>
+                            </ul>
+                        </div>
+                        <button
+                            class="p-2 rounded-lg text-primary hover:bg-primary hover:text-on-primary border border-primary/20 transition-all self-center">
+                            <span class="material-symbols-outlined">forest</span>
+                        </button>
+                    </div>
+
+                    <!-- Activity 4 -->
+                    <div class="flex items-start gap-6 p-6 hover:bg-surface-container-low transition-colors group">
+                        <div class="w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden border border-surface-variant">
+                            <img alt="Dining" class="w-full h-full object-cover" src="assets/local dining sagana.png" />
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-headline text-lg font-bold text-on-surface">Local Dining & Culture</h3>
+                                <span
+                                    class="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded uppercase tracking-tighter">0-10
+                                    Min</span>
+                            </div>
+                            <ul class="space-y-1 text-sm text-secondary">
+                                <li class="flex items-center gap-2"><span
+                                        class="w-1 h-1 rounded-full bg-primary"></span>Gourmet fusion restaurants</li>
+                                <li class="flex items-center gap-2"><span
+                                        class="w-1 h-1 rounded-full bg-primary"></span>Supermarkets (Magunas) nearby
+                                </li>
+                                <li class="flex items-center gap-2"><span
+                                        class="w-1 h-1 rounded-full bg-primary"></span>Coffee shops and artisans</li>
+                            </ul>
+                        </div>
+                        <button
+                            class="p-2 rounded-lg text-primary hover:bg-primary hover:text-on-primary border border-primary/20 transition-all self-center">
+                            <span class="material-symbols-outlined">restaurant</span>
+                        </button>
+                    </div>
+
                 </div>
             </div>
             <div style="text-align: center; margin-top: 3rem;">
                 <a href="https://www.google.com/maps/search/?api=1&query=Sagana,+Kirinyaga+County,+Kenya"
-                    target="_blank" class="btn-primary">
-                    📍 Find us on the Map
+                    target="_blank"
+                    class="bg-surface-container-high border border-outline/30 text-on-surface hover:text-primary px-8 py-3.5 rounded-lg font-bold text-sm tracking-wider inline-flex items-center gap-2 hover:bg-surface-container transition-colors">
+                    <span class="material-symbols-outlined text-primary">location_on</span> Find Sagana on the Map
                 </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="amenities" class="section bg-light">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>Premium Amenities</h2>
-                <p>Everything you need for a comfortable stay across all our properties.</p>
-            </div>
-            <div class="amenities-grid">
-                <div class="amenity-item glass-card soft">
-                    <div class="amenity-icon">🛡️</div>
-                    <h4>Top Security</h4>
-                    <p>24/7 security cameras and smart locks are strictly maintained for your absolute peace of mind.
-                    </p>
-                </div>
-                <div class="amenity-item glass-card soft">
-                    <div class="amenity-icon">✨</div>
-                    <h4>Excellent Lighting</h4>
-                    <p>Floor-to-ceiling windows and premium ambient lighting in all rooms.</p>
-                </div>
-                <div class="amenity-item glass-card soft">
-                    <div class="amenity-icon">📶</div>
-                    <h4>High-Speed Wi-Fi</h4>
-                    <p>Gigabit internet for uninterrupted streaming, gaming, and remote work.</p>
-                </div>
-                <div class="amenity-item glass-card soft">
-                    <div class="amenity-icon">🚗</div>
-                    <h4>Free Parking</h4>
-                    <p>Secure, designated parking spots for your vehicles at all locations.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="reviews" class="section">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>Guest Reviews</h2>
-                <p>See what our wonderful guests have to say about their stays at Baraka BNB.</p>
-            </div>
-            <div class="reviews-carousel-container glass-card">
-                <div class="reviews-track" id="reviews-track">
-                    <div class="review-card active">
-                        <div class="rating"><span class="star">★</span><span class="star">★</span><span
-                                class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-                        <p class="review-text">"The house is clean, safe, quiet. Has all amenities for a comfortable
-                            stay. Great internet, pictures are of the house.
-                            Rosaline was very accommodating and response with requests made.
-                            I highly recommend her place. Will definitely stay again when in the area"</p>
-                        <h4 class="reviewer-name">- Esther</h4>
-                    </div>
-                    <div class="review-card">
-                        <div class="rating"><span class="star">★</span><span class="star">★</span><span
-                                class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-                        <p class="review-text">"Check in was seamless, and I loved the cosy nature of the house. It is
-                            in a quiet part of town and I always looked forward to some r&r time.
-                            The host was incredibly helpful in sorting out a few concerns I had & even went out of her
-                            way to accommodate an emergency request.
-                            Highly recommended."</p>
-                        <h4 class="reviewer-name">- Teddy</h4>
-                    </div>
-                    <div class="review-card">
-                        <div class="rating"><span class="star">★</span><span class="star">★</span><span
-                                class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-                        <p class="review-text">"Visited during the cold season and the night was very warm.
-                            Newly built so quite clean.
-                            Also very quiet at night. I enjoyed the stay."</p>
-                        <h4 class="reviewer-name">- Evans</h4>
-                    </div>
-                    <div class="review-card">
-                        <div class="rating"><span class="star">★</span><span class="star">★</span><span
-                                class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-                        <p class="review-text">"Enjoyed my 1 week stay at this place
-                            It felt just like home!
-                            Very great host and everything is as is shown here 💯"</p>
-                        <h4 class="reviewer-name">- Doreen</h4>
-                    </div>
-                    <div class="review-card">
-                        <div class="rating"><span class="star">★</span><span class="star">★</span><span
-                                class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-                        <p class="review-text">"First,amen for the fan because why was 11am 28°😭😭, the place is
-                            lovely,very safe and secure parking, cctv surveillance as well. the space was clean, just as
-                            advertised,the housekeeping was top tier, it is near shops and literally on the highway,
-                            there's a big magunas supermarket for bulk supplies. the host responded in under 15 minutes
-                            on the app always and phone calls were promptly picked. our cats really enjoyed the stay and
-                            the outdoors that really fascinated them. totally worth the amount, and it'll be my go to
-                            when I'm around those sides"</p>
-                        <h4 class="reviewer-name">- Gee</h4>
-                    </div>
-                    <div class="review-card">
-                        <div class="rating"><span class="star">★</span><span class="star">★</span><span
-                                class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-                        <p class="review-text">"I liked that the place was spotlessly clean. The linen, carpet,
-                            curtains, sinks, walls were all very clean. The check-in process was so smooth. Rosaline’s
-                            communication was also impressive. There’s a fan so the room was cool throughout my stay. I
-                            enjoyed my stay. Highly recommended."</p>
-                        <h4 class="reviewer-name">- Posedian</h4>
-                    </div>
-                    <div class="review-card">
-                        <div class="rating"><span class="star">★</span><span class="star">★</span><span
-                                class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-                        <p class="review-text">"Baraka had everything I needed, a chill spot for me to spend the night -
-                            clean drinking water, tea, coffee and most importantly there was a FAN to stay cool through
-                            the night.
-                            Baraka was available to book late at night, I had no problem finding the property and it was
-                            an easy check-in.
-                            I also felt extremely safe with all the locks on the door. The only way someone was going to
-                            enter was if I let them in or if they blew they place up! 😄
-                            Strong recommend if you're in Sagana and need a safe place to chill for the night."</p>
-                        <h4 class="reviewer-name">- Magnus</h4>
-                    </div>
-                    <div class="review-card">
-                        <div class="rating"><span class="star">★</span><span class="star">★</span><span
-                                class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-                        <p class="review-text">"⭐️⭐️⭐️⭐️⭐️ Absolutely Wonderful Stay!
-                            I had an amazing weekend at Baraka Homes! The place was spotless, beautifully furnished, and
-                            had all the amenities I needed for a comfortable stay. The host was warm, responsive, and
-                            made check-in a breeze. The neighborhood was quiet and secure—perfect for relaxing. I would
-                            definitely stay here again and highly recommend it to anyone looking for a peaceful
-                            getaway!"</p>
-                        <h4 class="reviewer-name">- Paul</h4>
-                    </div>
-                    <div class="review-card">
-                        <div class="rating"><span class="star">★</span><span class="star">★</span><span
-                                class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-                        <p class="review-text">"I recommend Baraka homes for anyone looking to stay in Sagana. The host
-                            was always available for clarifications, as well as upon check-in and check out. The area is
-                            nice with shops and restaurants close-by. Price is very respectable for the quality of the
-                            appartement."</p>
-                        <h4 class="reviewer-name">- Artemisia</h4>
-                    </div>
-                    <div class="review-card">
-                        <div class="rating"><span class="star">★</span><span class="star">★</span><span
-                                class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-                        <p class="review-text">"Barasa's place exceeded my expectations! The space was immaculately
-                            clean, extremely safe, and equipped with security cameras for added peace of mind. The
-                            caretaker was incredibly responsive, helpful, and made the check-in process seamless. I
-                            highly recommend staying here!"</p>
-                        <h4 class="reviewer-name">- Joe</h4>
-                    </div>
-                </div>
-                <div class="carousel-controls">
-                    <button id="prev-review" class="carousel-btn">&larr;</button>
-                    <button id="next-review" class="carousel-btn">&rarr;</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="book" class="section">
-        <div class="section-container">
-            <div class="booking-container glass-card">
-                <div class="booking-info">
-                    <h2>Book Your Stay</h2>
-                    <p>Select your dates and preferred property to check availability. We typically respond to requests
-                        within an hour.</p>
-
-                    <div class="contact-info">
-                        <h3>Get in Touch</h3>
-                        <p>📞 +254 723 657 392</p>
-                        <p>✉️ ednakanyosh@gmail.com</p>
-                    </div>
-                </div>
-                <form id="booking-form" action="https://formspree.io/f/mojkyapn" method="POST" class="booking-form">
-                    <div class="form-group">
-                        <label for="property">Select Property</label>
-                        <select id="property" name="property" required class="glass-input">
-                            <option value="">Choose a location...</option>
-                            <option value="haven">Baraka Haven (Suburban)</option>
-                            <option value="urban">Baraka Urban (City Center)</option>
-                        </select>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="checkin">Check-in</label>
-                            <input type="date" id="checkin" name="checkin" required class="glass-input">
+        <!-- REVIEWS SECTION -->
+        <section id="reviews" class="py-24 px-6 max-w-screen-xl mx-auto bg-primary/5 rounded-3xl mb-12">
+            <h2 class="font-headline text-3xl font-bold text-center mb-16 text-on-surface">Guest Reviews</h2>
+            <div class="relative max-w-full group">
+                <button id="scroll-prev-btn"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full shadow bg-white dark:bg-gray-800 hidden md:flex items-center justify-center border border-surface-variant opacity-0 group-hover:opacity-100 transition-opacity hover:bg-surface-container"><span
+                        class="material-symbols-outlined">arrow_back</span></button>
+                <div id="reviews-slider" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 scroll-smooth"
+                    style="scrollbar-width: none; -ms-overflow-style: none;">
+                    <!-- Review 1 -->
+                    <div
+                        class="snap-center shrink-0 w-[300px] md:w-[400px] glass-card p-8 rounded-xl border border-surface-variant shadow-sm flex flex-col justify-between whitespace-normal">
+                        <div>
+                            <div class="flex text-primary mb-6">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-secondary italic text-sm leading-relaxed mb-8">"The house is clean, safe,
+                                quiet. Has all amenities for a comfortable stay. Great internet, pictures are of the
+                                house. Rosaline was very accommodating and responsive."</p>
                         </div>
-                        <div class="form-group">
-                            <label for="checkout">Check-out</label>
-                            <input type="date" id="checkout" name="checkout" required class="glass-input">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+                                E</div>
+                            <div>
+                                <p class="font-bold text-on-surface text-sm">Esther</p>
+                                <p class="text-[10px] text-outline uppercase tracking-widest font-bold">Verified Guest
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="guests">Guests</label>
-                        <input type="number" id="guests" name="guests" min="1" max="10" value="1" required
-                            class="glass-input">
+                    <!-- Review 2 -->
+                    <div
+                        class="snap-center shrink-0 w-[300px] md:w-[400px] glass-card p-8 rounded-xl border border-surface-variant shadow-sm flex flex-col justify-between whitespace-normal">
+                        <div>
+                            <div class="flex text-primary mb-6">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-secondary italic text-sm leading-relaxed mb-8">"Check in was seamless, and I
+                                loved the cosy nature of the house. It is in a quiet part of town and I always looked
+                                forward to some r&r time. Highly recommended."</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+                                T</div>
+                            <div>
+                                <p class="font-bold text-on-surface text-sm">Teddy</p>
+                                <p class="text-[10px] text-outline uppercase tracking-widest font-bold">Verified Guest
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="your@email.com" required
-                            class="glass-input">
+                    <!-- Review 3 -->
+                    <div
+                        class="snap-center shrink-0 w-[300px] md:w-[400px] glass-card p-8 rounded-xl border border-surface-variant shadow-sm flex flex-col justify-between whitespace-normal">
+                        <div>
+                            <div class="flex text-primary mb-6">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-secondary italic text-sm leading-relaxed mb-8">"Visited during the cold
+                                season and the night was very warm. Newly built so quite clean. Also very quiet at
+                                night. I enjoyed the stay."</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+                                E</div>
+                            <div>
+                                <p class="font-bold text-on-surface text-sm">Evans</p>
+                                <p class="text-[10px] text-outline uppercase tracking-widest font-bold">Verified Guest
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="number">Phone Number</label>
-                        <input type="tel" id="number" name="number" placeholder="+254712345678" value="+254"
-                            pattern="^\+254\d{9}$" title="Must start with +254 followed by exactly 9 digits" required
-                            class="glass-input">
+                    <!-- Review 4 -->
+                    <div
+                        class="snap-center shrink-0 w-[300px] md:w-[400px] glass-card p-8 rounded-xl border border-surface-variant shadow-sm flex flex-col justify-between whitespace-normal">
+                        <div>
+                            <div class="flex text-primary mb-6">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-secondary italic text-sm leading-relaxed mb-8">"Enjoyed my 1 week stay at
+                                this place. It felt just like home! Very great host and everything is as is shown here
+                                💯"</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+                                D</div>
+                            <div>
+                                <p class="font-bold text-on-surface text-sm">Doreen</p>
+                                <p class="text-[10px] text-outline uppercase tracking-widest font-bold">Verified Guest
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <button type="submit" class="btn-primary full-width">Request to Book</button>
-                    <div id="form-message" class="form-message hidden"></div>
-                </form>
+                    <!-- Review 5 -->
+                    <div
+                        class="snap-center shrink-0 w-[300px] md:w-[400px] glass-card p-8 rounded-xl border border-surface-variant shadow-sm flex flex-col justify-between whitespace-normal">
+                        <div>
+                            <div class="flex text-primary mb-6">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-secondary italic text-sm leading-relaxed mb-8">"First, amen for the fan! The
+                                place is lovely, very safe and secure parking. The space was clean, just as advertised.
+                                Near shops and super quick responses."</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+                                G</div>
+                            <div>
+                                <p class="font-bold text-on-surface text-sm">Gee</p>
+                                <p class="text-[10px] text-outline uppercase tracking-widest font-bold">Verified Guest
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 6 -->
+                    <div
+                        class="snap-center shrink-0 w-[300px] md:w-[400px] glass-card p-8 rounded-xl border border-surface-variant shadow-sm flex flex-col justify-between whitespace-normal">
+                        <div>
+                            <div class="flex text-primary mb-6">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-secondary italic text-sm leading-relaxed mb-8">"I liked that the place was
+                                spotlessly clean. The linen, carpet, curtains, sinks, walls were all very clean. The
+                                check-in process was so smooth."</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+                                P</div>
+                            <div>
+                                <p class="font-bold text-on-surface text-sm">Posedian</p>
+                                <p class="text-[10px] text-outline uppercase tracking-widest font-bold">Verified Guest
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 7 -->
+                    <div
+                        class="snap-center shrink-0 w-[300px] md:w-[400px] glass-card p-8 rounded-xl border border-surface-variant shadow-sm flex flex-col justify-between whitespace-normal">
+                        <div>
+                            <div class="flex text-primary mb-6">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-secondary italic text-sm leading-relaxed mb-8">"Baraka had everything I
+                                needed, a chill spot for me to spend the night. I also felt extremely safe with all the
+                                locks on the door. Strong recommend!"</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+                                M</div>
+                            <div>
+                                <p class="font-bold text-on-surface text-sm">Magnus</p>
+                                <p class="text-[10px] text-outline uppercase tracking-widest font-bold">Verified Guest
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 8 -->
+                    <div
+                        class="snap-center shrink-0 w-[300px] md:w-[400px] glass-card p-8 rounded-xl border border-surface-variant shadow-sm flex flex-col justify-between whitespace-normal">
+                        <div>
+                            <div class="flex text-primary mb-6">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-secondary italic text-sm leading-relaxed mb-8">"⭐️⭐️⭐️⭐️⭐️ Absolutely
+                                Wonderful Stay! The place was spotless, beautifully furnished. The neighborhood was
+                                quiet and secure—perfect for relaxing."</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+                                P</div>
+                            <div>
+                                <p class="font-bold text-on-surface text-sm">Paul</p>
+                                <p class="text-[10px] text-outline uppercase tracking-widest font-bold">Verified Guest
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 9 -->
+                    <div
+                        class="snap-center shrink-0 w-[300px] md:w-[400px] glass-card p-8 rounded-xl border border-surface-variant shadow-sm flex flex-col justify-between whitespace-normal">
+                        <div>
+                            <div class="flex text-primary mb-6">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-secondary italic text-sm leading-relaxed mb-8">"I recommend Baraka homes for
+                                anyone looking to stay in Sagana. Price is very respectable for the quality of the
+                                appartement."</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+                                A</div>
+                            <div>
+                                <p class="font-bold text-on-surface text-sm">Artemisia</p>
+                                <p class="text-[10px] text-outline uppercase tracking-widest font-bold">Verified Guest
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 10 -->
+                    <div
+                        class="snap-center shrink-0 w-[300px] md:w-[400px] glass-card p-8 rounded-xl border border-surface-variant shadow-sm flex flex-col justify-between whitespace-normal">
+                        <div>
+                            <div class="flex text-primary mb-6">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-secondary italic text-sm leading-relaxed mb-8">"Barasa's place exceeded my
+                                expectations! The space was immaculately clean, extremely safe, and equipped with
+                                security cameras. Seamless check-in."</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+                                J</div>
+                            <div>
+                                <p class="font-bold text-on-surface text-sm">Joe</p>
+                                <p class="text-[10px] text-outline uppercase tracking-widest font-bold">Verified Guest
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="scroll-next-btn"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full shadow bg-white dark:bg-gray-800 hidden md:flex items-center justify-center border border-surface-variant opacity-0 group-hover:opacity-100 transition-opacity hover:bg-surface-container"><span
+                        class="material-symbols-outlined">arrow_forward</span></button>
+            </div>
+        </section>
+
+        <!-- BOOKING / CONTACT SECTION -->
+        <section id="book" class="py-12 px-6 max-w-screen-xl mx-auto mb-24">
+            <div
+                class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white/50 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-surface-variant shadow-xl">
+                <div>
+                    <span
+                        class="text-primary font-bold tracking-[0.2em] uppercase text-xs block mb-2">Reservation</span>
+                    <h2 class="font-headline text-3xl font-bold text-on-surface mb-4">Book Your Stay</h2>
+                    <p class="text-secondary mb-8">Select your dates and preferred property to check availability. We
+                        typically respond to requests within an hour.</p>
+
+                    <div class="bg-surface-container-low p-6 rounded-2xl mb-8">
+                        <h3 class="font-bold text-primary mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-xl">support_agent</span> Host Support
+                        </h3>
+                        <p class="text-on-surface flex items-center gap-3 mb-3">
+                            <span class="material-symbols-outlined text-secondary">call</span> +254 723 657 392
+                        </p>
+                        <p class="text-on-surface flex items-center gap-3">
+                            <span class="material-symbols-outlined text-secondary">mail</span> ednakanyosh@gmail.com
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <form id="booking-form" action="https://formspree.io/f/mojkyapn" method="POST" class="space-y-4">
+                        <div>
+                            <label for="property" class="block text-sm font-medium text-on-surface mb-1">Select
+                                Property</label>
+                            <select id="property" name="property" required
+                                class="w-full bg-white/70 border border-outline/30 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary outline-none text-on-surface transition-all">
+                                <option value="">Choose a location...</option>
+                                <option value="haven">Baraka Haven (Suburban)</option>
+                                <option value="urban">Baraka Urban (City Center)</option>
+                            </select>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label for="checkin"
+                                    class="block text-sm font-medium text-on-surface mb-1">Check-in</label>
+                                <input type="date" id="checkin" name="checkin" required
+                                    class="w-full bg-white/70 border border-outline/30 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none">
+                            </div>
+                            <div>
+                                <label for="checkout"
+                                    class="block text-sm font-medium text-on-surface mb-1">Check-out</label>
+                                <input type="date" id="checkout" name="checkout" required
+                                    class="w-full bg-white/70 border border-outline/30 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label for="guests"
+                                    class="block text-sm font-medium text-on-surface mb-1">Guests</label>
+                                <input type="number" id="guests" name="guests" min="1" max="10" value="1" required
+                                    class="w-full bg-white/70 border border-outline/30 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none">
+                            </div>
+                            <div>
+                                <label for="number" class="block text-sm font-medium text-on-surface mb-1">Phone</label>
+                                <input type="tel" id="number" name="number" placeholder="+254712345678" value="+254"
+                                    pattern="^\+254\d{9}$" title="Must start with +254 followed by exactly 9 digits"
+                                    required
+                                    class="w-full bg-white/70 border border-outline/30 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-on-surface mb-1">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required
+                                class="w-full bg-white/70 border border-outline/30 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none">
+                        </div>
+                        <button type="submit"
+                            class="w-full primary-gradient text-on-primary px-8 py-4 rounded-lg font-bold text-sm tracking-widest transition-all hover:brightness-110 active:scale-95 shadow-md mt-4">
+                            REQUEST TO BOOK
+                        </button>
+                        <div id="form-message" class="hidden mt-4 text-center text-sm font-bold p-3 rounded-lg"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-surface-container-high border-t border-surface-variant w-full">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-screen-2xl mx-auto">
+            <div class="md:col-span-2">
+                <div class="flex items-center gap-6 mb-8">
+                    <div
+                        class="w-16 h-16 rounded-lg bg-primary text-on-primary flex items-center justify-center text-2xl font-bold shadow-sm">
+                        R
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-on-surface font-headline uppercase tracking-tight">Hosted by
+                            Rosaline</h4>
+                        <p class="text-secondary text-sm mt-1 max-w-sm">"I'm Rosaline, your host for a memorable stay at
+                            Baraka BNB. I look forward to hosting you!"</p>
+                    </div>
+                </div>
+                <a href="mailto:ednakanyosh@gmail.com"
+                    class="primary-gradient text-on-primary px-8 py-2.5 rounded-lg font-bold text-sm tracking-widest transition-all hover:brightness-110 active:scale-95 shadow-md inline-block text-center">
+                    CONTACT HOST
+                </a>
+            </div>
+            <div>
+                <h5 class="text-sm font-bold text-on-surface uppercase tracking-[0.2em] mb-6">Baraka BNB</h5>
+                <ul class="space-y-3">
+                    <li><a class="text-secondary hover:text-primary transition-colors text-sm font-medium"
+                            href="#home">Home</a></li>
+                    <li><a class="text-secondary hover:text-primary transition-colors text-sm font-medium"
+                            href="#properties">Properties</a></li>
+                    <li><a class="text-secondary hover:text-primary transition-colors text-sm font-medium"
+                            href="#book">Book Now</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-sm font-bold text-on-surface uppercase tracking-[0.2em] mb-6">Assistance</h5>
+                <ul class="space-y-3">
+                    <li><a class="text-secondary hover:text-primary transition-colors text-sm font-medium"
+                            href="tel:+254723657392">+254 723 657 392</a></li>
+                    <li><a class="text-secondary hover:text-primary transition-colors text-sm font-medium"
+                            href="mailto:ednakanyosh@gmail.com">Email Us</a></li>
+                    <li><a class="text-secondary hover:text-primary transition-colors text-sm font-medium"
+                            href="#">FAQ</a></li>
+                </ul>
             </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Baraka BNB. All rights reserved.</p>
-            <p>Built by Karuri.</p>
+        <div
+            class="px-12 py-8 border-t border-surface-variant/50 text-center md:text-left max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-outline text-xs font-medium tracking-wide">© 2026 BARAKA BNB. ALL RIGHTS RESERVED.</p>
+            <p class="text-outline text-xs font-medium tracking-wide">Built by Karuri</p>
         </div>
     </footer>
+
+    <!-- Mobile Nav Bottom -->
+    <div
+        class="md:hidden fixed bottom-6 left-6 right-6 z-50 bg-white/95 backdrop-blur-md border border-surface-variant rounded-xl px-8 py-4 flex justify-between items-center shadow-2xl">
+        <a href="#home" class="flex flex-col items-center text-primary">
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-[10px] font-bold mt-1 uppercase">Home</span>
+        </a>
+        <a href="#properties" class="flex flex-col items-center text-secondary">
+            <span class="material-symbols-outlined">apartment</span>
+            <span class="text-[10px] font-bold mt-1 uppercase">Properties</span>
+        </a>
+        <a href="#activities" class="flex flex-col items-center text-secondary">
+            <span class="material-symbols-outlined">tour</span>
+            <span class="text-[10px] font-bold mt-1 uppercase">Tour</span>
+        </a>
+        <a href="#book" class="flex flex-col items-center text-secondary">
+            <span class="material-symbols-outlined">calendar_month</span>
+            <span class="text-[10px] font-bold mt-1 uppercase">Book</span>
+        </a>
+    </div>
 
     <script src="script.js"></script>
 </body>
